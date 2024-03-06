@@ -3,19 +3,7 @@ export default {
     name: 'CarCard',
     props: {
         car: Object,
-    },
-    methods: {
-        getUrlImage(){
-            let image;
-            if(this.car.immagine!= null){
-                image = '/storage/' + this.car.immagine;
-            }
-            else{
-                image = ''
-            }
-            return ${this.store.baseUrl}/storage/${image};
-        }
-    },
+    }
 }
 </script>
 <template lang="">
@@ -27,7 +15,7 @@ export default {
                     <h2 class="text-center">{{car['modello']}}</h2>
                 </div>
                 <div class="card-body">
-                    <img :src="getUrlImage()" alt="{{car['modello']}}">
+                    <!-- <img :src="car.immagine ? `/storage/${car.immagine}` : `/storage/${default_image}` alt="${car.modello}"> -->
                     <p>{{car['tipologia']}}</p>
                     <p>{{car['cambio']}}</p>
                     <p>Prezzo: &euro{{car['prezzo']}}</p>
