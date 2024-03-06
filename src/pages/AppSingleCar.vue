@@ -16,9 +16,9 @@ export default {
     },
     methods: {
         getCar() {
-            axios.get(`${this.store.baseUrl}/api/car/${this.$route.params.slug}`,).then((response) => {
+            axios.get(`${this.store.baseUrl}/api/cars/${this.$route.params.slug}`,).then((response) => {
                 if(response.data.success){
-                    this.car = response.data.response[0];
+                    this.car = response.data.response;
                     this.success = response.data.success;
                 }
                 else{
@@ -34,7 +34,7 @@ export default {
         <div class="row" v-if="success">
             <div class="col-12">
                 <div class="image d-flex justify-content-center">
-                    <!-- <img :src="getUrlImage()" alt="car.modello"> -->
+                    <img :src="car.immagine ? `${car.immagine}` : ''" alt="${car.modello}">
                 </div>
                 <div class="col-12">
                     <h1 class="text-center py-5">Marca: {{ car.marca}} </h1>
