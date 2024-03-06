@@ -25,6 +25,16 @@ export default {
                     this.$router.push({ name: 'not-found'})
                 }
             });
+        },
+        getUrlImage(){
+            let image;
+            if(this.car.immagine != null){
+                image = '/storage/' + this.car.immagine;
+            }
+            else{
+                image = 'img/default.png'
+            }
+            return `${this.store.baseUrl}/storage/${image}`;
         }
     }
 }
@@ -34,7 +44,7 @@ export default {
         <div class="row" v-if="success">
             <div class="col-12">
                 <div class="image d-flex justify-content-center">
-                    <!-- <img :src="getUrlImage()" alt="car.modello"> -->
+                    <img :src="getUrlImage()" alt="car.modello">
                 </div>
                 <div class="col-12">
                     <h1 class="text-center py-5">Marca: {{ car.marca }} </h1>
