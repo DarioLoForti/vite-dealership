@@ -29,11 +29,11 @@ export default {
 }
 </script>
 <template lang="">
-    <div>
+    <div class="color">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <h1></h1>
+                <div class="col-12 text-center my-4">
+                    <h1>Elenco automobili</h1>
                 </div>
             </div>
             <div class="row">
@@ -45,5 +45,7 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
-    
+    // .color{
+    //     background-color: orange;
+    // }
 </style>
