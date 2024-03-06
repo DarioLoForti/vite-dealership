@@ -8,7 +8,7 @@ export default {
 }
 </script>
 <template lang="">
-  <Header />
+  <Header/>
   <router-view></router-view>
 </template>
 <style lang="scss">

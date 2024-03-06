@@ -9,14 +9,10 @@ export const store = reactive({
             name:'home',
             label: 'Home',
         },
-        // {
-        //     name:'cars',
-        //     label: 'Automobili',
-        // },
-        // {
-        //     name:'brands',
-        //     label: 'Case Automobilistiche',
-        // },
+        {
+            name:'cars',
+            label: 'Automobili',
+        },
     ]
     
 });
