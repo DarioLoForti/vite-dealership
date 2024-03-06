@@ -33,22 +33,30 @@ export default {
 
 header{
     width: 100%;
-    background-color: rgb(44, 44, 44);
+    background-color: orange;
     padding-top: 20px;
-    h1{
-        color: white;
-    }
+  
     ul{
         display: flex;
         list-style: none;
         li{
             line-height: 50px;
-            color: white;
+            color: black;
             margin-right: 10px;
+            padding: 5px 4px;
 
             a{
                 text-decoration: none;
-                color: white;
+                color: black;
+                padding: 5px 4px;
+                
+                &:hover{
+                    color: rgb(63, 63, 63);
+                    border-radius: 5px;
+
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                    
+                }
             }
         }
     }

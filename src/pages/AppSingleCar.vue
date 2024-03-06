@@ -42,45 +42,54 @@ export default {
 <template lang="">
     <div class="container">
         <div class="row" v-if="success">
-            <div class="col-12">
-                <div class="image d-flex justify-content-center">
-                    <img :src="getUrlImage()" alt="car.modello">
+            <div class="col-12 mt-5">
+                <div class="row ">
+                    <div class="col-6 image d-flex justify-content-center">
+                        <img :src="getUrlImage()" alt="car.modello">
+                    </div>
+                    
+                    <div class="col-6">
+                        <div class="row ms-4">
+
+                            <div class="col-12">
+                                <p> Alimentazione:  {{car.alimentazione}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Cilindrata:  {{car.cilindrata}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Cambio:  {{car.cambio}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Porte:  {{car.porte}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Posti:  {{car.posti}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Tipologia:  {{car.tipologia}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Stato:  {{car.stato}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Anno Immatricolazione:  {{car.anno_immatricolazione}} </p>
+                            </div>
+                            <div class="col-12">
+                                <p> Chilometri:  {{car.km}} </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center py-5">Marca: {{ car.marca }} </h1>
+                    <h1 class="">Marca: {{ car.marca }} </h1>
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center py-5">Modello: {{ car.modello }} </h1>
+                    <h1 class="">Modello: {{ car.modello }} </h1>
                 </div>
-                <div class="col-12">
+                <div class="col-12 text-end">
                     <p> Prezzo: {{car.prezzo}}</p>
-                </div>
-                <div class="col-12">
-                    <p> Alimentazione:  {{car.alimentazione}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Cilindrata:  {{car.cilindrata}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Cambio:  {{car.cambio}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Porte:  {{car.porte}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Posti:  {{car.posti}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Tipologia:  {{car.tipologia}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Stato:  {{car.stato}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Anno Immatricolazione:  {{car.anno_immatricolazione}} </p>
-                </div>
-                <div class="col-12">
-                    <p> Chilometri:  {{car.km}} </p>
+
                 </div>
             </div>
         </div>

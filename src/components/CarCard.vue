@@ -27,20 +27,20 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-3">
-        <router-link :to="{name: 'car', params: {slug: car.slug} }">
-            <div class="card my-2">
-                <div class="card-image-top">
+    <div class="col-4">
+        <router-link class="text-decoration-none" :to="{name: 'car', params: {slug: car.slug} }">
+            <div class="card my-2 altezza-card color">
+                <div class="card-image-top m-3">
                     <img :src="getUrlImage()" alt="car.modello">
                 </div>
                 <div class="card-title">
-                    <h1 class="text-center">{{car['marca']}}</h1>
-                    <h2 class="text-center">{{car['modello']}}</h2>
+                    <h2 class="text-center">{{car['marca']}}</h2>
+                    <h4 class="text-center">{{car['modello']}}</h4>
                 </div>
                 <div class="card-body">
-                    <p>{{car['tipologia']}}</p>
-                    <p>{{car['cambio']}}</p>
-                    <p>Prezzo: &euro{{car['prezzo']}}</p>
+                    <p>Tipo: {{car['tipologia']}}</p>
+                    <p>Cambio: {{car['cambio']}}</p>
+                    <p>Prezzo: &euro;{{car['prezzo']}}</p>
                 </div>
             </div>
         </router-link>
@@ -50,5 +50,17 @@ export default {
 @use '../styles/generals.scss' as *;
 img{
     width: 150px;
+}
+.altezza-card{
+    min-height: 500px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    &:hover{
+
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    }
+}
+.color{
+    background-color: rgb(253, 172, 22);
 }
 </style>
