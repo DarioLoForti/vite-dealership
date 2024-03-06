@@ -24,7 +24,7 @@ export default {
             axios.get(`${this.store.baseUrl}/api/cars`).then((response)=>{
                 this.cars = response.data.response;
             })
-        }
+        },
     },
 }
 </script>

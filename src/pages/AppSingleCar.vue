@@ -29,7 +29,12 @@ export default {
         getUrlImage(){
             let image;
             if(this.car.immagine != null){
-                image = '/storage/' + this.car.immagine;
+                if(this.car.immagine.includes("https://")){
+                    image = 'img/default.png'
+                }
+                else{
+                    image = this.car.immagine;
+                }
             }
             else{
                 image = 'img/default.png'
