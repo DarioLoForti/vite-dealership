@@ -16,9 +16,9 @@ export default {
     },
     methods: {
         getCar() {
-            axios.get(`${this.store.baseUrl}/api/car/${this.$route.params.slug}`,).then((response) => {
+            axios.get(`${this.store.baseUrl}/api/cars/${this.$route.params.slug}`,).then((response) => {
                 if(response.data.success){
-                    this.car = response.data.response[0];
+                    this.car = response.data.response;
                     this.success = response.data.success;
                 }
                 else{
@@ -37,10 +37,10 @@ export default {
                     <!-- <img :src="getUrlImage()" alt="car.modello"> -->
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center py-5">Marca: {{ car.marca}} </h1>
+                    <h1 class="text-center py-5">Marca: {{ car.marca }} </h1>
                 </div>
                 <div class="col-12">
-                    <h1 class="text-center py-5">Modello: {{ car.modello}} </h1>
+                    <h1 class="text-center py-5">Modello: {{ car.modello }} </h1>
                 </div>
                 <div class="col-12">
                     <p> Prezzo: {{car.prezzo}}</p>
