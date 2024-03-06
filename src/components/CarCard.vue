@@ -20,14 +20,14 @@ export default {
 </script>
 <template lang="">
     <div class="col-3">
-        <router-link :to="{name: 'car', params: {slug: car.slug}}">
+        <router-link :to="{name: 'car', params: {slug: car.slug} }">
             <div class="card my-2">
                 <div class="card-title">
                     <h1 class="text-center">{{car['marca']}}</h1>
                     <h2 class="text-center">{{car['modello']}}</h2>
                 </div>
                 <div class="card-body">
-                    <img :src="car.immagine ? '/storage/${car.immagine} : '/storage/${default_image}" alt="car.modello">
+                    <!-- <img :src="car.immagine ? '/storage/${car.immagine} : '/storage/${default_image}" alt="car.modello"> -->
                     <p>{{car['tipologia']}}</p>
                     <p>{{car['cambio']}}</p>
                     <p>Prezzo: &euro{{car['prezzo']}}</p>
@@ -36,6 +36,6 @@ export default {
         </router-link>
     </div>
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+@use '../styles/generals.scss' as *;
 </style>

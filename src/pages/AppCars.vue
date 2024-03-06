@@ -1,5 +1,5 @@
 <script>
-import CarCard from '../pages/CarCard.vue';
+import CarCard from '../components/CarCard.vue';
 import { store } from '../store.js';
 import axios from'axios';
 
@@ -22,7 +22,7 @@ export default {
     methods: {
         getCars(){
             axios.get(`${this.store.baseUrl}/api/cars`).then((response)=>{
-                this.cars = response.data.results.data;
+                this.cars = response.data.response;
             })
         }
     },
@@ -43,7 +43,7 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
-@use './styles/generals.scss' as *;
+@use '../styles/generals.scss' as *;
 
     
 </style>
