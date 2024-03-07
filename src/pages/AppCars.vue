@@ -60,10 +60,12 @@ export default {
                     <option selected value="0">Brand Selection</option>
                     <option v-for="brand, index in store.brands" :value="brand.id">{{brand.nome}}</option>
                 </select>
+                <div></div>
             </div>
             <div class="row" v-if="cars.length != 0">
                 <CarCard v-for="car, index in cars" :key="index" :car="car"/>
             </div>
+            <div></div>
             <div class="row my-3" v-else>
                 <h3>Nessuna macchina trovata per questo brand.</h3>
             </div>
