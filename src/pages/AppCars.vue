@@ -48,7 +48,7 @@ export default {
         getBrands(){
             if(store.brands.length == 0){
                 axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
-                    store.brands = response.data.response;
+                    store.brands = response.data.response; 
                 })
             }
         
