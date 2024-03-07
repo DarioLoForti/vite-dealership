@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store.js';
 export default {
-    name: 'CarCard',
+    name: 'BrandCard',
     props: {
         brand: Object,
  
@@ -11,33 +11,13 @@ export default {
             store,
         }
     },
-
-    methods: {
-        getUrlImage(){
-            let image;
-            if(this.car.immagine != null){
-                if(this.car.immagine.includes("https://")){
-                    image = 'img/default.png'
-                }
-                else{
-                    image = this.car.immagine;
-                }
-            }
-            else{
-                image = 'img/default.png'
-            }
-            return `${this.store.baseUrl}/storage/${image}`;
-        }
-    }
 }
 </script>
 <template lang="">
     <div class="col-4">
         <router-link class="text-decoration-none" :to="{name: 'brand', params: {id: brand.id} }">
             <div class="card my-2 altezza-card color">
-                <div class="card-image-top m-3">
-                    <img :src="getUrlImage()" alt="brand.nome">
-                </div>
+                
                 <div class="card-title">
                     <h2 class="text-center">{{brand.nome}}</h2>
                     <h4 class="text-center">{{brand.indirizzo}}</h4>

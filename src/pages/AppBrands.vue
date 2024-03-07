@@ -17,10 +17,10 @@ export default {
         }
     },
     created() {
-        this.getBarndss();
+        this.getBrands();
     },
     methods: {
-        getCars(){
+        getBrands(){
             axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
                 this.brands = response.data.response;
             })
