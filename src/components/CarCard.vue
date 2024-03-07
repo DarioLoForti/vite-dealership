@@ -45,7 +45,8 @@ export default {
                 <div class="card-body">
                     <p>Tipo: {{car['tipologia']}}</p>
                     <p>Cambio: {{car['cambio']}}</p>
-                    <p>Prezzo: &euro;{{car['prezzo']}}</p>
+                    <p>Prezzo auto: &euro;{{car['prezzo'] * 1000}}</p>
+                    
                 </div>
             </div>
         </router-link>
