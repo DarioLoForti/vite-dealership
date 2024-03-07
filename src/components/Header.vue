@@ -15,7 +15,10 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <h1>Cars Dealership</h1>
+                    <router-link :to="{ name: 'home' }">
+                        <img class='misura-logo' src="../../public/logo.jpg" alt="">
+                    </router-link>
+                    
                 </div>
                 <div class="col-8">
                     <ul class='float-end '>
@@ -33,7 +36,7 @@ export default {
 
 header{
     width: 100%;
-    background-color: orange;
+    background-color: #ffa500;
     padding-top: 20px;
   
     ul{
@@ -59,6 +62,10 @@ header{
                 }
             }
         }
+    }
+    .misura-logo{
+        width: 150px;
+        
     }
 }
     

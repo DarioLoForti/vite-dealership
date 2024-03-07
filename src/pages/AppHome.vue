@@ -5,7 +5,7 @@ export default {
 </script>
 <template lang="">
     <div class="text-center ">
-        <h1 class='text-center'> Benvenuti </h1>
+        <h1 class='my-5'> Benvenuti </h1>
         <router-link class="text-decoration-none color" :to="{ name: 'cars'}"><button class="bottone">{{'Automobili'}}</button></router-link>
 
         
@@ -20,7 +20,7 @@ border: 1px solid orange;
 border-radius: 10px;
     &:hover {
         background-color: white;
-        color: orange;
+        color: #ffa500;
         border: 2px solid orange;
     }
 }
