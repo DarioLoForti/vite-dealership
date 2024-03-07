@@ -22,8 +22,14 @@ export default {
                 </div>
                 <div class="col-8">
                     <ul class='float-end '>
-                        <li v-for="item, index in store.menuItems" :key="index">
-                            <router-link :to="{ name: item.name }">{{ item.label }}</router-link>
+                        <li>
+                            <router-link :to="{ name: 'home' }">Home</router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'cars', params: { brand_id : 0 } } ">Automobili</router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'brands' }">Brands</router-link>
                         </li>
                     </ul>
                 </div>
