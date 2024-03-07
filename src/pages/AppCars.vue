@@ -2,19 +2,23 @@
 import CarCard from '../components/CarCard.vue';
 import { store } from '../store.js';
 import axios from'axios';
+import AppLoader from '../components/AppLoader.vue';
 
 export default {
     name: 'AppCars',
     components:{
         CarCard,
+        AppLoader,
     },
     data() {
         return {
             store,
+            
             brandFilter: 0,
             cars:[],
             currentPage: 1,
             lastPage: null,
+            loading: false,
         }
     },
     created() {
@@ -24,15 +28,21 @@ export default {
     methods: {
 
         getCars(page_number){
-            axios.get(`${this.store.baseUrl}/api/cars/${this.brandFilter}`,{
-                params: {
-                    page: page_number
-                }
-            }).then((response)=>{
-                this.cars = response.data.response.data;
-                this.currentPage = response.data.response.current_page
-                this.lastPage = response.data.response.last_page
-            })
+            this.loading = true;
+            setTimeout(()=>{
+
+                axios.get(`${this.store.baseUrl}/api/cars/${this.brandFilter}`,{
+                    params: {
+                        page: page_number
+                    }
+                }).then((response)=>{
+                    
+                    this.cars = response.data.response.data;
+                    this.currentPage = response.data.response.current_page;
+                    this.lastPage = response.data.response.last_page;
+                    this.loading = false;
+                })
+            },2000)
         },
 
         getBrands(){
@@ -47,8 +57,11 @@ export default {
     },
 }
 </script>
-<template lang="">
-    <div class="color">
+<template lang="" >
+    <div v-if="loading">
+        <AppLoader />
+    </div>
+    <div class="color" v-show="!loading">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
@@ -76,7 +89,39 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 
-    // .color{
-    //     background-color: orange;
-    // }
+.loader {
+  width: 4.8px;
+  height: 4.8px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 4px;
+  color: #FFF;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader 0.3s 0.3s linear infinite alternate;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 4.8px;
+  height: 4.8px;
+  border-radius: 4px;
+  background: currentColor;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+  animation: animloader 0.3s 0.45s linear infinite alternate;
+}
+.loader::after {
+    top: -15px;
+    animation-delay: 0s;
+}
+
+@keyframes animloader {
+    0% { width: 4.8px }
+    100% { width: 48px}
+}
 </style>

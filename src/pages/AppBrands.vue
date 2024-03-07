@@ -21,19 +21,26 @@ export default {
     },
     methods: {
         getBrands(){
-            axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
-                this.brands = response.data.response;
-            })
+            if(store.brands.length == 0){
+                setTimeout(()=>{
+                axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
+                    store.brands = response.data.response;
+                })
+            },2000)
+            }
         },
     },
 }
 </script>
 <template lang="">
-    <div class="color">
+    <div v-if="loading">
+        <AppLoader />
+    </div>
+    <div class="color" v-show="!loading">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
-                    <h1>Elenco Brend</h1>
+                    <h1>Elenco Brand</h1>
                 </div>
             </div>
             <div class="row">
