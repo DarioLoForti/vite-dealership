@@ -165,7 +165,7 @@ export default {
 @use '../styles/generals.scss' as*;
 .image{
     img{
-        width: 200px;
+        width: 80%;
     }
 }
 </style>

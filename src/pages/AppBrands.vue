@@ -11,6 +11,7 @@ export default {
     data() {
         return {
             store,
+            brands:[],
             currentPage: 1,
             lastPage: null,
         }
@@ -20,11 +21,9 @@ export default {
     },
     methods: {
         getBrands(){
-            if(store.brands.length == 0){
-                axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
-                    store.brands = response.data.response;
-                })
-            }
+            axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
+                this.brands = response.data.response;
+            })
         },
     },
 }
@@ -38,7 +37,7 @@ export default {
                 </div>
             </div>
             <div class="row">
-                <BrandCard v-for="brand, index in store.brands" :key="index" :brand="brand"/>
+                <BrandCard v-for="brand, index in brands" :key="index" :brand="brand"/>
             </div>
         </div>
     </div>
