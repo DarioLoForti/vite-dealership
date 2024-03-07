@@ -7,7 +7,9 @@ export default {
     <div class="text-center ">
         <h1 class='my-5'> Benvenuti </h1>
         <router-link class="text-decoration-none color" :to="{ name: 'cars', params: { brand_id : 0 } }"><button class="bottone">{{'Automobili'}}</button></router-link>
+        <router-link class="text-decoration-none color mx-3" :to="{ name: 'brands'}"><button class="bottone">{{'Brands'}}</button></router-link>
     </div>
+    
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as*;
