@@ -13,6 +13,10 @@ export const store = reactive({
             name:'cars',
             label: 'Automobili',
         },
+        {
+            name:'brands',
+            label: 'Brands',
+        },
     ]
     
 });

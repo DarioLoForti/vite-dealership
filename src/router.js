@@ -25,6 +25,11 @@ const router = createRouter({
             component: AppCars
         },
         {
+            path: '/brands',
+            name: 'brands',
+            component: AppBrands
+        },
+        {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
             component: AppNotFound
