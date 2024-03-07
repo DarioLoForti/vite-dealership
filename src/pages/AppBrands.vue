@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             store,
-            brands:[],
+            
             currentPage: 1,
             lastPage: null,
         }
@@ -21,30 +21,23 @@ export default {
     },
     methods: {
         getBrands(){
-            if(store.brands.length == 0){
-                setTimeout(()=>{
-                axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
-                    store.brands = response.data.response;
-                })
-            },2000)
-            }
+            axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
+                store.brands = response.data.response;
+            })
         },
     },
 }
 </script>
 <template lang="">
-    <div v-if="loading">
-        <AppLoader />
-    </div>
-    <div class="color" v-show="!loading">
+    <div class="color">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
-                    <h1>Elenco Brand</h1>
+                    <h1>Elenco Brend</h1>
                 </div>
             </div>
             <div class="row">
-                <BrandCard v-for="brand, index in brands" :key="index" :brand="brand"/>
+                <BrandCard v-for="brand, index in store.brands" :key="index" :brand="brand"/>
             </div>
         </div>
     </div>
