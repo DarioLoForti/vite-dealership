@@ -53,8 +53,9 @@ export default {
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
+
 img{
-    width: 150px;
+    width: 380px;
 }
 .altezza-card{
     min-height: 500px;

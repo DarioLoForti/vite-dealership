@@ -42,7 +42,7 @@ export default {
                     this.lastPage = response.data.response.last_page;
                     this.loading = false;
                 })
-            },2000)
+            },1000)
         },
 
         getBrands(){
