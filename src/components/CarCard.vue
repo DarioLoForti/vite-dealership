@@ -36,7 +36,7 @@ export default {
         <router-link class="text-decoration-none" :to="{name: 'car', params: {slug: car.slug} }">
             <div class="card my-2 altezza-card color">
                 <div class="card-image-top m-3">
-                    <img :src="getUrlImage()" alt="car.modello">
+                    <img :src="getUrlImage()" :alt="car.modello">
                 </div>
                 <div class="card-title">
                     <h2 class="text-center">{{car['marca']}}</h2>
@@ -45,7 +45,7 @@ export default {
                 <div class="card-body">
                     <p>Tipo: {{car['tipologia']}}</p>
                     <p>Cambio: {{car['cambio']}}</p>
-                    <p>Prezzo: &euro;{{car['prezzo']}}</p>
+                    <p>Prezzo: &euro;{{car['prezzo']*100}}</p>
                 </div>
             </div>
         </router-link>

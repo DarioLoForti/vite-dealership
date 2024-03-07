@@ -17,14 +17,14 @@ const router = createRouter({
             component: AppHome
         },
         {
+            path: '/cars/:brand_id?',
+            name: 'cars',
+            component: AppCars
+        },
+        {
             path: '/car/:slug',
             name: 'car',
             component: AppSingleCar
-        },
-        {
-            path: '/cars',
-            name: 'cars',
-            component: AppCars
         },
         {
             path: '/brands',

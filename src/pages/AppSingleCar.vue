@@ -16,7 +16,7 @@ export default {
     },
     methods: {
         getCar() {
-            axios.get(`${this.store.baseUrl}/api/cars/${this.$route.params.slug}`,).then((response) => {
+            axios.get(`${this.store.baseUrl}/api/car/${this.$route.params.slug}`,).then((response) => {
                 if(response.data.success){
                     this.car = response.data.response;
                     this.success = response.data.success;

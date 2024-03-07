@@ -17,6 +17,7 @@ export const store = reactive({
             name:'brands',
             label: 'Brands',
         },
-    ]
-    
+    ],
+
+    brands: [],
 });

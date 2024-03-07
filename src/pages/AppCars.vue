@@ -11,17 +11,20 @@ export default {
     data() {
         return {
             store,
+            brandFilter: 0,
             cars:[],
             currentPage: 1,
             lastPage: null,
         }
     },
     created() {
+        this.getBrands();
         this.getCars();
     },
     methods: {
+
         getCars(page_number){
-            axios.get(`${this.store.baseUrl}/api/cars`,{
+            axios.get(`${this.store.baseUrl}/api/cars/${this.brandFilter}`,{
                 params: {
                     page: page_number
                 }
@@ -31,6 +34,16 @@ export default {
                 this.lastPage = response.data.response.last_page
             })
         },
+
+        getBrands(){
+            if(store.brands.length == 0){
+                axios.get(`${this.store.baseUrl}/api/brands`).then((response)=>{
+                    store.brands = response.data.response;
+                })
+            }
+        
+            }
+        
     },
 }
 </script>
@@ -41,6 +54,12 @@ export default {
                 <div class="col-12 text-center my-4">
                     <h1>Elenco automobili</h1>
                 </div>
+            </div>
+            <div class="row">
+                <select class="form-select" v-model="this.brandFilter" @change="this.getCars()">
+                    <option selected value="0">Brand Selection</option>
+                    <option v-for="brand, index in store.brands" :value="brand.id">{{brand.nome}}</option>
+                </select>
             </div>
             <div class="row">
                 <CarCard v-for="car, index in cars" :key="index" :car="car"/>
