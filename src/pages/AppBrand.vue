@@ -17,7 +17,6 @@ export default {
     },
     methods: {
         getBrand(){
-            
                 axios.get(`${this.store.baseUrl}/api/brands/${this.$route.params.id}`).then((response)=>{
                     if(response.data.success){
                     this.brand = response.data.response;
